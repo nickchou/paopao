@@ -99,8 +99,7 @@ namespace PaoPao
         /// <param name="e"></param>
         private void btnOpenFile_Click(object sender, EventArgs e)
         {
-            string logPath = Path.GetDirectoryName(this.GetType().Assembly.Location) + "\\logs\\RecordLog1";
-
+            string logPath = Path.GetDirectoryName(this.GetType().Assembly.Location) + "\\logs\\RecordLog";
             try
             {
                 Process.Start(logPath);
