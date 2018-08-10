@@ -138,12 +138,11 @@ namespace PaoPao
                 sb.AppendFormat("|id:{0}", para.Id);
                 sb.AppendFormat("|url:{0}", url);
                 sb.AppendFormat("|times:{0}s", sw.ElapsedMilliseconds * 1.0 / 1000);
-                sbLog.AppendFormat("id:{0}\r\n{1}", para.Id, value);
+                sbLog.AppendFormat("id:{0}\r\n{1}", para.Id, value); //TextHelper.ClearHtml(value)
                 ListBoxHelp.Add(lbRes, sb.ToString() + "\r\n");
                 LogHelper.WriteRecordLog(sbLog.ToString());
                 Thread.Sleep(THREAD_SLEEP_MS);
             }
-
             //ListBoxHelp.Add(lbRes, string.Format("执行完毕，耗时{0}秒", sw.ElapsedMilliseconds * 1.0 / 1000));
         }
         public List<Parameter> GetParams()
