@@ -233,7 +233,7 @@
             this.MinimizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "跑跑数据 v1.0";
+            this.Text = "跑跑数据 v1.1";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numDownMs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDownThread)).EndInit();

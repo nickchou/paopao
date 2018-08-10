@@ -15,13 +15,7 @@ namespace PaoPao
         [STAThread]
         static void Main()
         {
-            //log4net
-            string path = Application.StartupPath + @"../../../";
-            Directory.SetCurrentDirectory(path);
-            //设置log4net配置文件
-            string strFilePath = System.IO.Directory.GetCurrentDirectory() + @"\log4net.cfg.xml";
-            FileInfo file = new FileInfo(strFilePath);
-            log4net.Config.XmlConfigurator.Configure(file);
+            Comm.LogHelper.SetConfig();
             //程序默认
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
