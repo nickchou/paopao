@@ -99,15 +99,16 @@ namespace PaoPao
         /// <param name="e"></param>
         private void btnOpenFile_Click(object sender, EventArgs e)
         {
-            string logPath = Path.GetDirectoryName(this.GetType().Assembly.Location) + "\\logs\\RecordLog";
-            if (File.Exists(logPath))
+            string logPath = Path.GetDirectoryName(this.GetType().Assembly.Location) + "\\logs\\RecordLog1";
+
+            try
             {
                 Process.Start(logPath);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("未找到指定的日志文件:" + logPath,"error");
-                Process.Start(Path.GetDirectoryName(this.GetType().Assembly.Location));
+                MessageBox.Show("未找到指定的日志文件:" + logPath, "error");
+                Path.GetDirectoryName(this.GetType().Assembly.Location);
             }
         }
         #endregion
@@ -138,7 +139,7 @@ namespace PaoPao
                 sb.AppendFormat("|id:{0}", para.Id);
                 sb.AppendFormat("|url:{0}", url);
                 sb.AppendFormat("|times:{0}s", sw.ElapsedMilliseconds * 1.0 / 1000);
-                sbLog.AppendFormat("-----------\r\nid:{0}\r\b{1}", para.Id, value);
+                sbLog.AppendFormat("id:{0}\r\n{1}", para.Id, value);
                 ListBoxHelp.Add(lbRes, sb.ToString() + "\r\n");
                 LogHelper.WriteRecordLog(sbLog.ToString());
                 Thread.Sleep(THREAD_SLEEP_MS);

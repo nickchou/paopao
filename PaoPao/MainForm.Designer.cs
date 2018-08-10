@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.lblCopyMsg = new System.Windows.Forms.Label();
             this.btnOpenFile = new System.Windows.Forms.Button();
             this.numDownMs = new System.Windows.Forms.NumericUpDown();
@@ -226,6 +227,11 @@
             this.Controls.Add(this.lbRes);
             this.Controls.Add(this.btnGO);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "跑跑数据 v1.0";
