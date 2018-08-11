@@ -138,12 +138,12 @@
             // 
             // txtURL
             // 
-            this.txtURL.Location = new System.Drawing.Point(47, 12);
+            this.txtURL.Location = new System.Drawing.Point(49, 12);
             this.txtURL.Multiline = true;
             this.txtURL.Name = "txtURL";
             this.txtURL.Size = new System.Drawing.Size(452, 55);
             this.txtURL.TabIndex = 32;
-            this.txtURL.Text = "http://www.baidu.com?id={0}&name={2}&age={1}&class={3}";
+            this.txtURL.Text = "http://www.baidu.com?a={0}&b={2}&c={1}&d={3}";
             // 
             // btnCopy
             // 
@@ -237,9 +237,8 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 471);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(804, 477);
             this.Controls.Add(this.btnAbort);
             this.Controls.Add(this.btnPause);
             this.Controls.Add(this.lblCopyMsg);
@@ -257,14 +256,13 @@
             this.Controls.Add(this.lbRes);
             this.Controls.Add(this.btnGO);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(820, 516);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "跑跑数据 v1.2";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Resize += new System.EventHandler(this.MainForm_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.numDownMs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDownThread)).EndInit();
             this.ResumeLayout(false);

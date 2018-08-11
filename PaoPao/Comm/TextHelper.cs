@@ -41,5 +41,10 @@ namespace PaoPao.Comm
             //Htmlstring = HttpContext.Current.Server.HtmlEncode(Htmlstring).Trim();
             return Htmlstring;
         }
+        public static string ClearSpace(string html)
+        {
+            html = html.Replace("\n", "").Replace("  ", "").Replace("\t", "").Replace("\r", "");
+            return html;
+        }
     }
 }

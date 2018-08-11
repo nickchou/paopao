@@ -18,9 +18,8 @@ namespace PaoPao.TypeExt
         /// <returns></returns>
         public static List<T> GetPageDataByIndex<T>(this List<T> source, int PageIndex, int PageSize)
         {
-            //List<T> returnValue = new List<T>();
-            //int listCnt = source.Count;
             int index = PageIndex < 1 ? 1 : PageIndex;
+            //take 如果超过下标了不会报错，没有取到数据会返回new List();
             var ranageList = source.Skip((index - 1) * PageSize).Take(PageSize).ToList();
             return ranageList;
         }
