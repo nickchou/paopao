@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ctl="clr-namespace:paopao.controls;assembly=paopao.controls"
         xmlns:local="clr-namespace:PaoPao.WPF"
         mc:Ignorable="d"
         Title="Paopao" Height="600" Width="1000">
@@ -42,16 +43,39 @@
             <ComboBoxItem IsSelected="True" DataContext="GET">GET</ComboBoxItem>
             <ComboBoxItem DataContext="GET">POST</ComboBoxItem>
         </ComboBox>
-        <TextBox HorizontalAlignment="Left" Height="33" FontSize="14" Margin="97,43,0,0"  VerticalContentAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="460">
+        <TextBox BorderThickness="1" BorderBrush="#FF027CEE" HorizontalAlignment="Left" Height="33" FontSize="14" Margin="97,43,0,0"  VerticalContentAlignment="Center" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="460">
             <TextBox.Resources>
-                <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.4" Stretch="None" AlignmentX="Left">
+                <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.8" Stretch="None" AlignmentX="Left">
                     <VisualBrush.Visual>
-                        <TextBlock FontStyle="Normal" Text="enter request URL" Padding="0,0,100,0"/>
+                        <TextBlock Padding="6,2" Background="Transparent" Foreground="Silver"  FontSize="14">enter request URL</TextBlock>
                     </VisualBrush.Visual>
                 </VisualBrush>
+
+                <!--<Style  TargetType="TextBox">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <Border Name="border" BorderThickness="1" BorderBrush="#FF027CEE" Background="{TemplateBinding Background}">
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>-->
             </TextBox.Resources>
             <TextBox.Style>
                 <Style TargetType="TextBox">
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="BorderBrush" Value="#c1d0dc"/>
+                    <!--<Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type TextBox}">
+      
+                                    <Border Name="border" BorderThickness="1" BorderBrush="#FF027CEE" Background="{TemplateBinding Background}">
+                                    </Border>
+                        
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>-->
                     <Style.Triggers>
                         <Trigger Property="Text" Value="{x:Null}">
                             <Setter Property="Background" Value="{StaticResource HintText}"/>
